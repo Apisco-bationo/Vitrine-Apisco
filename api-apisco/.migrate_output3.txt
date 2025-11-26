@@ -1,0 +1,7 @@
+
+   INFO  Running migrations.  
+
+  2025_11_25_194923_create_users_table .................... 1s DONE
+  2025_11_25_194925_create_quotes_table ............... 4.87ms DONE
+  2025_11_25_195000_create_users_table_fix ............ 2.62ms DONE
+

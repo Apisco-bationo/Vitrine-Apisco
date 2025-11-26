@@ -1,0 +1,11 @@
+
+  Migration name ................................... Batch / Status  
+  0001_01_01_000000_create_users_table .................... [1] Ran  
+  0001_01_01_000001_create_cache_table .................... [1] Ran  
+  0001_01_01_000002_create_jobs_table ..................... [1] Ran  
+  2025_11_25_194923_create_users_table .................... [4] Ran  
+  2025_11_25_194924_create_services_table ................. [2] Ran  
+  2025_11_25_194925_create_orders_table ................... [3] Ran  
+  2025_11_25_194925_create_quotes_table ................... [4] Ran  
+  2025_11_25_195000_create_users_table_fix ................ [4] Ran  
+

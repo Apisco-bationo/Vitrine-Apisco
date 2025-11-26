@@ -1,0 +1,48 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [Tables_in_api_apisco] => cache
+        )
+
+    [1] => stdClass Object
+        (
+            [Tables_in_api_apisco] => cache_locks
+        )
+
+    [2] => stdClass Object
+        (
+            [Tables_in_api_apisco] => failed_jobs
+        )
+
+    [3] => stdClass Object
+        (
+            [Tables_in_api_apisco] => job_batches
+        )
+
+    [4] => stdClass Object
+        (
+            [Tables_in_api_apisco] => jobs
+        )
+
+    [5] => stdClass Object
+        (
+            [Tables_in_api_apisco] => migrations
+        )
+
+    [6] => stdClass Object
+        (
+            [Tables_in_api_apisco] => orders
+        )
+
+    [7] => stdClass Object
+        (
+            [Tables_in_api_apisco] => quotes
+        )
+
+    [8] => stdClass Object
+        (
+            [Tables_in_api_apisco] => services
+        )
+
+)

@@ -8,9 +8,8 @@ return new class extends Migration
 {
     public function up(): void
     {
-        // Create the users table (this file previously contained the wrong
-        // schema due to a copy/paste error). Keep it idempotent in case the
-        // table already exists.
+        // Create users table only if it does not exist. This migration fixes
+        // an earlier migration file that accidentally created the wrong table.
         if (! Schema::hasTable('users')) {
             Schema::create('users', function (Blueprint $table) {
                 $table->id();

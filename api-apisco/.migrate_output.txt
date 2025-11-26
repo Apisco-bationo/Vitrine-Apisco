@@ -1,0 +1,29 @@
+
+   INFO  Running migrations.  
+
+  2025_11_25_194925_create_orders_table .............. 11.23ms FAIL
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'orders' already exists (Connection: mysql, SQL: create table `orders` (`id` bigint unsigned not null auto_increment primary key, `user_id` bigint unsigned not null, `service_id` bigint unsigned null, `custom_description` text null, `amount` decimal(12, 2) null, `status` varchar(255) not null default 'pending', `admin_notes` text null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:824
+    820▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    821▕                 );
+    822▕             }
+    823▕ 
+  ➜ 824▕             throw new QueryException(
+    825▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    826▕             );
+    827▕         }
+    828▕     }
+
+      [2m+9 vendor frames [22m
+
+  10  database/migrations/2025_11_25_194925_create_orders_table.php:11
+      Illuminate\Support\Facades\Facade::__callStatic("create")
+      [2m+26 vendor frames [22m
+
+  37  artisan:16
+      Illuminate\Foundation\Application::handleCommand(Object(Symfony\Component\Console\Input\ArgvInput))
+
