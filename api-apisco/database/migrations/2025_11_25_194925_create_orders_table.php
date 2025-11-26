@@ -8,9 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        // Only create the table if it doesn't already exist. This avoids
-        // failures when the physical table is present but the migration
-        // wasn't recorded in the migrations table.
+        
         if (! Schema::hasTable('orders')) {
             Schema::create('orders', function (Blueprint $table) {
                 $table->id();
