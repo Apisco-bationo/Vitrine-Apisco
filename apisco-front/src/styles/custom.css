@@ -1,0 +1,15 @@
+.hero-section {
+  background: linear-gradient(135deg, var(--apisco-orange) 0%, #ff8c42 100%);
+  color: white;
+  padding: 100px 0;
+}
+
+.service-card {
+  transition: transform 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}

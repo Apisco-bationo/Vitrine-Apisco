@@ -1,0 +1,35 @@
+/* Variables CSS personnalisées */
+:root {
+  --apisco-orange: #FF6B35;
+  --apisco-orange-dark: #e55a2b;
+  --apisco-white: #FFFFFF;
+  --apisco-black: #212529;
+  --apisco-gray: #6C757D;
+}
+
+/* Styles de base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--apisco-black);
+  margin: 0;
+  padding: 0;
+}
+
+/* Override Bootstrap */
+.btn-primary {
+  background-color: var(--apisco-orange);
+  border-color: var(--apisco-orange);
+}
+
+.btn-primary:hover {
+  background-color: var(--apisco-orange-dark);
+  border-color: var(--apisco-orange-dark);
+}
+
+.text-primary {
+  color: var(--apisco-orange) !important;
+}
+
+.bg-primary {
+  background-color: var(--apisco-orange) !important;
+}
