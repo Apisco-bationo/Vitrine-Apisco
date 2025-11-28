@@ -1,0 +1,30 @@
+
+   INFO  Running migrations.  
+
+  2025_11_25_194925_create_orders_table ............... 6.51ms DONE
+  2025_11_25_194925_create_quotes_table ............. 521.49ms FAIL
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1824 Failed to open the referenced table 'users' (Connection: mysql, SQL: alter table `quotes` add constraint `quotes_user_id_foreign` foreign key (`user_id`) references `users` (`id`) on delete set null)
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:824
+    820▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    821▕                 );
+    822▕             }
+    823▕ 
+  ➜ 824▕             throw new QueryException(
+    825▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    826▕             );
+    827▕         }
+    828▕     }
+
+      [2m+9 vendor frames [22m
+
+  10  database/migrations/2025_11_25_194925_create_quotes_table.php:12
+      Illuminate\Support\Facades\Facade::__callStatic("create")
+      [2m+26 vendor frames [22m
+
+  37  artisan:16
+      Illuminate\Foundation\Application::handleCommand(Object(Symfony\Component\Console\Input\ArgvInput))
+
