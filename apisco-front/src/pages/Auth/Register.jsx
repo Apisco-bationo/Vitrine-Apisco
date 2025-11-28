@@ -41,121 +41,177 @@ const Register = ({ onLogin }) => {
 
   return (
     <div className="auth-page">
-      <div className="container py-5">
-        <div className="row justify-content-center">
-          <div className="col-md-8 col-lg-6">
-            <div className="card shadow-lg border-0">
-              <div className="card-body p-5">
-                <div className="text-center mb-4">
-                  <h2 className="text-primary fw-bold">Inscription</h2>
-                  <p className="text-muted">Créez votre compte</p>
-                </div>
+      <div className="container">
+        <div className="row justify-content-center position-relative">
+          <div className="col-12 col-md-10 col-lg-6">
+            <div 
+              className="auth-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              {/* Header */}
+              <div className="auth-header">
+               
+                <h2 className="text-primary fw-bold mb-2">Inscription</h2>
+                <p className="text-muted">Rejoignez notre communauté</p>
+              </div>
 
+              {/* Body */}
+              <div className="auth-body">
                 {error && (
-                  <div className="alert alert-danger" role="alert">
+                  <div 
+                    className="alert alert-danger glass-effect"
+                    role="alert"
+                    data-aos="fade-in"
+                  >
                     {error}
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit}>
                   <div className="row">
-                    <div className="col-md-6 mb-3">
-                      <label htmlFor="name" className="form-label">Nom complet *</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="name"
-                        name="name"
-                        value={form.name}
-                        onChange={handleChange}
-                        required
-                      />
+                    <div className="col-12 col-md-6">
+                      <div className="auth-form-group" data-aos="fade-right" data-aos-delay="300">
+                        <label htmlFor="name" className="auth-form-label">👤 Nom complet</label>
+                        <input
+                          id="name"
+                          type="text"
+                          className="form-control auth-form-control"
+                          name="name"
+                          placeholder="Votre nom complet"
+                          value={form.name}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
                     </div>
-
-                    <div className="col-md-6 mb-3">
-                      <label htmlFor="email" className="form-label">Email *</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        name="email"
-                        value={form.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-md-6 mb-3">
-                      <label htmlFor="password" className="form-label">Mot de passe *</label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        id="password"
-                        name="password"
-                        value={form.password}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <div className="col-md-6 mb-3">
-                      <label htmlFor="password_confirmation" className="form-label">Confirmation *</label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        id="password_confirmation"
-                        name="password_confirmation"
-                        value={form.password_confirmation}
-                        onChange={handleChange}
-                        required
-                      />
+                    <div className="col-12 col-md-6">
+                      <div className="auth-form-group" data-aos="fade-left" data-aos-delay="400">
+                        <label htmlFor="email" className="auth-form-label">📧 Email</label>
+                        <input
+                          id="email"
+                          type="email"
+                          className="form-control auth-form-control"
+                          name="email"
+                          placeholder="votre@email.com"
+                          value={form.email}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
                     </div>
                   </div>
 
                   <div className="row">
-                    <div className="col-md-6 mb-3">
-                      <label htmlFor="phone" className="form-label">Téléphone</label>
-                      <input
-                        type="tel"
-                        className="form-control"
-                        id="phone"
-                        name="phone"
-                        value={form.phone}
-                        onChange={handleChange}
-                      />
+                    <div className="col-12 col-md-6">
+                      <div className="auth-form-group" data-aos="fade-right" data-aos-delay="500">
+                        <label htmlFor="password" className="auth-form-label">🔒 Mot de passe</label>
+                        <input
+                          id="password"
+                          type="password"
+                          className="form-control auth-form-control"
+                          name="password"
+                          placeholder="Minimum 8 caractères"
+                          value={form.password}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
                     </div>
+                    <div className="col-12 col-md-6">
+                      <div className="auth-form-group" data-aos="fade-left" data-aos-delay="600">
+                        <label htmlFor="password_confirmation" className="auth-form-label">✅ Confirmation</label>
+                        <input
+                          id="password_confirmation"
+                          type="password"
+                          className="form-control auth-form-control"
+                          name="password_confirmation"
+                          placeholder="Confirmez le mot de passe"
+                          value={form.password_confirmation}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
 
-                    <div className="col-md-6 mb-3">
-                      <label htmlFor="company" className="form-label">Entreprise</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="company"
-                        name="company"
-                        value={form.company}
-                        onChange={handleChange}
-                      />
+                  <div className="row">
+                    <div className="col-12 col-md-6">
+                      <div className="auth-form-group" data-aos="fade-right" data-aos-delay="700">
+                        <label htmlFor="phone" className="auth-form-label">📱 Téléphone</label>
+                        <input
+                          id="phone"
+                          type="tel"
+                          className="form-control auth-form-control"
+                          name="phone"
+                          placeholder="Votre numéro de téléphone"
+                          value={form.phone}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <div className="auth-form-group" data-aos="fade-left" data-aos-delay="800">
+                        <label htmlFor="company" className="auth-form-label">🏢 Entreprise</label>
+                        <input
+                          id="company"
+                          type="text"
+                          className="form-control auth-form-control"
+                          name="company"
+                          placeholder="Nom de votre entreprise"
+                          value={form.company}
+                          onChange={handleChange}
+                        />
+                      </div>
                     </div>
                   </div>
 
                   <button 
                     type="submit" 
-                    className="btn btn-primary w-100 py-2 mt-2"
+                    className="btn btn-primary w-100 py-3 mt-2 hover-lift"
                     disabled={loading}
+                    data-aos="zoom-in"
+                    data-aos-delay="900"
                   >
-                    {loading ? 'Inscription...' : "S'inscrire"}
+                    {loading ? (
+                      <>
+                        <span className="spinner-border spinner-border-sm me-2"></span>
+                        Inscription...
+                      </>
+                    ) : (
+                      "Créer mon compte"
+                    )}
                   </button>
                 </form>
 
-                <div className="text-center mt-4">
-                  <p className="text-muted">
-                    Déjà un compte ? <Link to="/login" className="text-primary text-decoration-none">Se connecter</Link>
+                <div 
+                  className="text-center mt-4"
+                  data-aos="fade-in"
+                  data-aos-delay="1000"
+                >
+                  <p className="text-muted mb-0">
+                    Déjà un compte ?{' '}
+                    <Link to="/login" className="text-primary text-decoration-none fw-bold">
+                      Se connecter
+                    </Link>
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Floating decorative elements - hidden on mobile */}
+          <div 
+            className="position-fixed top-0 start-0 mt-5 ms-5 floating-element d-none d-lg-block"
+            style={{ zIndex: -1, opacity: 0.1 }}
+          >
+            <div className="bg-success rounded-circle" style={{ width: '80px', height: '80px' }}></div>
+          </div>
+          <div 
+            className="position-fixed bottom-0 end-0 mb-5 me-5 floating-element d-none d-lg-block"
+            style={{ zIndex: -1, opacity: 0.1, animationDelay: '3s' }}
+          >
+            <div className="bg-info rounded-circle" style={{ width: '120px', height: '120px' }}></div>
           </div>
         </div>
       </div>

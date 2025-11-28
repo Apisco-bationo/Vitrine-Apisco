@@ -31,41 +31,54 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="auth-page">
-      <div className="container py-5">
-        <div className="row justify-content-center">
-          <div className="col-md-6 col-lg-5">
-            <div className="card shadow-lg border-0">
-              <div className="card-body p-5">
-                <div className="text-center mb-4">
-                  <h2 className="text-primary fw-bold">Connexion</h2>
-                  <p className="text-muted">Accédez à votre compte</p>
-                </div>
+      <div className="container">
+        <div className="row justify-content-center position-relative">
+          <div className="col-12 col-md-8 col-lg-5">
+            <div 
+              className="auth-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              {/* Header */}
+              <div className="auth-header">
+               
+                <h2 className="text-primary fw-bold mb-2">Connexion</h2>
+                <p className="text-muted">Content de vous revoir !</p>
+              </div>
 
+              {/* Body */}
+              <div className="auth-body">
                 {error && (
-                  <div className="alert alert-danger" role="alert">
+                  <div 
+                    className="alert alert-danger glass-effect"
+                    role="alert"
+                    data-aos="fade-in"
+                  >
                     {error}
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email</label>
+                  <div className="auth-form-group" data-aos="fade-right" data-aos-delay="300">
+                    <label htmlFor="email" className="auth-form-label">📧 Email</label>
                     <input
-                      type="email"
-                      className="form-control"
                       id="email"
+                      type="email"
+                      className="form-control auth-form-control"
+                      placeholder="Votre adresse email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       required
                     />
                   </div>
 
-                  <div className="mb-4">
-                    <label htmlFor="password" className="form-label">Mot de passe</label>
+                  <div className="auth-form-group" data-aos="fade-left" data-aos-delay="400">
+                    <label htmlFor="password" className="auth-form-label">🔒 Mot de passe</label>
                     <input
-                      type="password"
-                      className="form-control"
                       id="password"
+                      type="password"
+                      className="form-control auth-form-control"
+                      placeholder="Votre mot de passe"
                       value={form.password}
                       onChange={(e) => setForm({ ...form, password: e.target.value })}
                       required
@@ -74,48 +87,73 @@ const Login = ({ onLogin }) => {
 
                   <button 
                     type="submit" 
-                    className="btn btn-primary w-100 py-2 mb-3"
+                    className="btn btn-primary w-100 py-3 mb-4 hover-lift"
                     disabled={loading}
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
                   >
-                    {loading ? 'Connexion...' : 'Se connecter'}
+                    {loading ? (
+                      <>
+                        <span className="spinner-border spinner-border-sm me-2"></span>
+                        Connexion...
+                      </>
+                    ) : (
+                      'Se connecter'
+                    )}
                   </button>
                 </form>
 
-                <div className="text-center mb-4">
-                  <div className="position-relative">
-                    <hr />
-                    <span className="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted">
-                      Ou continuer avec
-                    </span>
-                  </div>
+                <div className="auth-divider" data-aos="fade-in" data-aos-delay="600">
+                  <span>Ou continuer avec</span>
                 </div>
 
-                <div className="d-grid gap-2">
+                <div className="d-grid gap-3" data-aos="fade-up" data-aos-delay="700">
                   <button 
                     type="button" 
-                    className="btn btn-outline-dark d-flex align-items-center justify-content-center"
+                    className="oauth-btn d-flex align-items-center justify-content-center"
                     onClick={() => handleOAuth('google')}
                   >
-                    <i className="fab fa-google me-2"></i>
-                    Google
+                    <i className="fab fa-google text-danger me-3"></i>
+                    <span>Google</span>
                   </button>
                   <button 
                     type="button" 
-                    className="btn btn-outline-dark d-flex align-items-center justify-content-center"
+                    className="oauth-btn d-flex align-items-center justify-content-center"
                     onClick={() => handleOAuth('github')}
                   >
-                    <i className="fab fa-github me-2"></i>
-                    GitHub
+                    <i className="fab fa-github me-3"></i>
+                    <span>GitHub</span>
                   </button>
                 </div>
 
-                <div className="text-center mt-4">
-                  <p className="text-muted">
-                    Pas de compte ? <Link to="/register" className="text-primary text-decoration-none">S'inscrire</Link>
+                <div 
+                  className="text-center mt-4"
+                  data-aos="fade-in"
+                  data-aos-delay="800"
+                >
+                  <p className="text-muted mb-0">
+                    Pas de compte ?{' '}
+                    <Link to="/register" className="text-primary text-decoration-none fw-bold">
+                      S'inscrire
+                    </Link>
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Floating decorative elements - hidden on mobile */}
+          <div 
+            className="position-fixed top-0 start-0 mt-5 ms-5 floating-element d-none d-lg-block"
+            style={{ zIndex: -1, opacity: 0.1 }}
+          >
+            <div className="bg-primary rounded-circle" style={{ width: '100px', height: '100px' }}></div>
+          </div>
+          <div 
+            className="position-fixed bottom-0 end-0 mb-5 me-5 floating-element d-none d-lg-block"
+            style={{ zIndex: -1, opacity: 0.1, animationDelay: '2s' }}
+          >
+            <div className="bg-warning rounded-circle" style={{ width: '150px', height: '150px' }}></div>
           </div>
         </div>
       </div>
