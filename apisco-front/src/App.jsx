@@ -9,6 +9,7 @@ import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
 import Login from './pages/Auth/Login'
 import Register from './pages/Auth/Register'
+import Projects from './pages/Projects'
 import Quotes from './pages/Quotes'
 import Orders from './pages/Orders'
 import Dashboard from './pages/Dashboard'
@@ -104,6 +105,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quotes" element={<Quotes user={user} />} />
+          <Route path="/projects" element={<Projects user={user} />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/register" element={<Register onLogin={handleLogin} />} />
 

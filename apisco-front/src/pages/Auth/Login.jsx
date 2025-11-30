@@ -17,7 +17,7 @@ const Login = ({ onLogin }) => {
       const response = await api.post('/login', form)
       localStorage.setItem('apisco_token', response.data.token)
       onLogin(response.data.user)
-      navigate('/dashboard')
+      navigate('/projects')
     } catch (error) {
       setError(error.response?.data?.message || 'Erreur de connexion')
     } finally {

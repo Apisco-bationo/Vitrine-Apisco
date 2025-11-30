@@ -1081,7 +1081,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 460px;
 }
 
 .auth-card::before {
@@ -1160,7 +1160,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.95);
   border: 2px solid rgba(255, 107, 53, 0.2);
   border-radius: 12px;
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1rem;
   font-size: 1rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);

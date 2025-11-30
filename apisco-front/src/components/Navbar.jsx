@@ -1,8 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/LOGO AG NOUVEAU 2.png'
 
-const Navbar = () => {
+const Navbar = ({ user, onLogout }) => {
+  const navigate = useNavigate()
+
+  const handleLogoutClick = async () => {
+    if (onLogout) await onLogout()
+    navigate('/login')
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
       <div className="container">
@@ -56,11 +62,24 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="navbar-nav">
-            <Link className="nav-link me-3" to="/login">Connexion</Link>
-            <Link className="btn btn-primary" to="/register">
-              S'inscrire
-            </Link>
+          <div className="navbar-nav d-flex align-items-center">
+            {user ? (
+              <>
+                <span className="nav-link me-3">Bonjour, {user.name}</span>
+                <Link className="nav-link me-2" to="/projects">Mes projets</Link>
+                <Link className="nav-link me-3" to="/dashboard">Dashboard</Link>
+                <button className="btn btn-outline-primary" onClick={handleLogoutClick}>
+                  Déconnexion
+                </button>
+              </>
+            ) : (
+              <>
+                <Link className="nav-link me-3" to="/login">Connexion</Link>
+                <Link className="btn btn-primary" to="/register">
+                  S'inscrire
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

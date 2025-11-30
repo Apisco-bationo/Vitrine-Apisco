@@ -24,7 +24,7 @@ const Register = ({ onLogin }) => {
       const response = await api.post('/register', form)
       localStorage.setItem('apisco_token', response.data.token)
       onLogin(response.data.user)
-      navigate('/dashboard')
+      navigate('/projects')
     } catch (error) {
       setError(error.response?.data?.message || "Erreur lors de l'inscription")
     } finally {
